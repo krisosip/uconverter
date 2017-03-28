@@ -7,9 +7,11 @@
 package guru.bug.uconverter.format;
 
 import guru.bug.uconverter.convert.temperature.CelsiusConverter;
+import guru.bug.uconverter.model.Converter;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by krisosip on 28/03/2017.
@@ -20,8 +22,9 @@ public class BasicFormatterTest {
     @Test
     public void format() throws Exception {
         double value = 54.578347584375;
-        CelsiusConverter converter = new CelsiusConverter();
-        assertEquals("54.58 C", formatter.format(value, converter));
+        Converter converter = mock(Converter.class);
+        when(converter.getUnitAbbr()).thenReturn("X");
+        assertEquals("54.58 X", formatter.format(value, converter));
     }
 
 }
