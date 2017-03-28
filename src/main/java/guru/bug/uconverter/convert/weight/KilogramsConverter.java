@@ -4,13 +4,21 @@
  * See the LICENSE file for details.
  */
 
-package guru.bug.uconverter.model;
+package guru.bug.uconverter.convert.weight;
 
 /**
  * @author Dimitrijs Fedotovs <a href="http://www.bug.guru">www.bug.guru</a>
  * @version 1.0
  * @since 1.0
  */
-public interface Formatter {
-    String format(double value, Converter converter);
+public class KilogramsConverter extends AbstractWeightConverter {
+    @Override
+    public String getUnitName() {
+        return "Kilograms";
+    }
+
+    @Override
+    public String getUnitAbbr() {
+        return "kg";
+    }
 }

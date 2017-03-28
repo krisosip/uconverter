@@ -6,6 +6,11 @@
 
 package guru.bug.uconverter.model;
 
+/**
+ * @author Dimitrijs Fedotovs <a href="http://www.bug.guru">www.bug.guru</a>
+ * @version 1.0
+ * @since 1.0
+ */
 public class Conversion {
     private Converter source;
     private Converter target;
@@ -21,8 +26,7 @@ public class Conversion {
 
     private double convert(double sourceValue) {
         double std = source.toStandard(sourceValue);
-        double targetValue = target.fromStandard(std);
-        return targetValue;
+        return target.fromStandard(std);
     }
 
     public double getSourceValue() {
@@ -39,12 +43,12 @@ public class Conversion {
 
     public String getFormattedSourceValue() {
         Formatter fmt = source.getFormatter();
-        return fmt.format(sourceValue);
+        return fmt.format(sourceValue, source);
     }
 
     public String getFormattedTargetValue() {
         double trgValue = convert(sourceValue);
         Formatter fmt = target.getFormatter();
-        return fmt.format(trgValue);
+        return fmt.format(trgValue, target);
     }
 }

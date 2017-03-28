@@ -4,13 +4,16 @@
  * See the LICENSE file for details.
  */
 
-package guru.bug.uconverter.model;
+package guru.bug.uconverter.convert.temperature;
 
 /**
  * @author Dimitrijs Fedotovs <a href="http://www.bug.guru">www.bug.guru</a>
  * @version 1.0
  * @since 1.0
  */
-public interface Formatter {
-    String format(double value, Converter converter);
+public class KelvinConverter extends AbstractTemperatureConverter {
+    @Override
+    public String getUnitName() {
+        return "Kelvin";
+    }
 }

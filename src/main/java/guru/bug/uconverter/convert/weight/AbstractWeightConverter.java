@@ -4,20 +4,19 @@
  * See the LICENSE file for details.
  */
 
-package guru.bug.uconverter.format;
+package guru.bug.uconverter.convert.weight;
 
 import guru.bug.uconverter.model.Converter;
-import guru.bug.uconverter.model.Formatter;
+import guru.bug.uconverter.model.UnitType;
 
 /**
  * @author Dimitrijs Fedotovs <a href="http://www.bug.guru">www.bug.guru</a>
  * @version 1.0
  * @since 1.0
  */
-public class BasicFormatter implements Formatter {
-
+public abstract class AbstractWeightConverter implements Converter {
     @Override
-    public String format(double value, Converter converter) {
-        return String.format("%.2f %s", value, converter.getUnitAbbr());
+    public UnitType getUnitType() {
+        return UnitType.WEIGHT;
     }
 }

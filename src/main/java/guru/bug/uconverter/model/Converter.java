@@ -8,26 +8,30 @@ package guru.bug.uconverter.model;
 
 import guru.bug.uconverter.format.BasicFormatter;
 
-public abstract class Converter {
+/**
+ * @author Dimitrijs Fedotovs <a href="http://www.bug.guru">www.bug.guru</a>
+ * @version 1.0
+ * @since 1.0
+ */
+public interface Converter {
 
-    public abstract UnitType getUnitType();
+    UnitType getUnitType();
 
-    public abstract String getUnitName();
+    String getUnitName();
 
-    public String getUnitAbbr() {
+    default String getUnitAbbr() {
         return getUnitName().substring(0, 1);
     }
 
-    public Formatter getFormatter() {
+    default Formatter getFormatter() {
         return new BasicFormatter();
     }
 
-    public double toStandard(double value) {
+    default double toStandard(double value) {
         return value;
     }
 
-    public double fromStandard(double stdValue) {
+    default double fromStandard(double stdValue) {
         return stdValue;
     }
-
 }
