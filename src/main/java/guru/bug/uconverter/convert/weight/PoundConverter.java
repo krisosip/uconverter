@@ -13,7 +13,7 @@ package guru.bug.uconverter.convert.weight;
  */
 public class PoundConverter extends AbstractWeightConverter {
 
-    public static final double CONST = 2.2046;
+    private static final double CONST = 2.2046;
 
     @Override
     public String getUnitName() {
