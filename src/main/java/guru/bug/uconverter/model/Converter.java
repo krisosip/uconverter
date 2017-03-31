@@ -13,25 +13,30 @@ import guru.bug.uconverter.format.BasicFormatter;
  * @version 1.0
  * @since 1.0
  */
-public interface Converter {
+public abstract class Converter {
 
-    UnitType getUnitType();
+    public abstract UnitType getUnitType();
 
-    String getUnitName();
+    public abstract String getUnitName();
 
-    default String getUnitAbbr() {
+    public String getUnitAbbr() {
         return getUnitName().substring(0, 1);
     }
 
-    default Formatter getFormatter() {
+    public Formatter getFormatter() {
         return new BasicFormatter();
     }
 
-    default double toStandard(double value) {
+    public double toStandard(double value) {
         return value;
     }
 
-    default double fromStandard(double stdValue) {
+    public double fromStandard(double stdValue) {
         return stdValue;
+    }
+
+    @Override
+    public String toString(){
+        return getUnitName();
     }
 }

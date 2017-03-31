@@ -14,7 +14,7 @@ import guru.bug.uconverter.model.UnitType;
  * @version 1.0
  * @since 1.0
  */
-public abstract class AbstractTemperatureConverter implements Converter {
+public abstract class AbstractTemperatureConverter extends Converter {
     @Override
     public UnitType getUnitType() {
         return UnitType.TEMPERATURE;

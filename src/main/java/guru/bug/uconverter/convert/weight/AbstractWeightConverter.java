@@ -14,7 +14,7 @@ import guru.bug.uconverter.model.UnitType;
  * @version 1.0
  * @since 1.0
  */
-public abstract class AbstractWeightConverter implements Converter {
+public abstract class AbstractWeightConverter extends Converter {
     @Override
     public UnitType getUnitType() {
         return UnitType.WEIGHT;
