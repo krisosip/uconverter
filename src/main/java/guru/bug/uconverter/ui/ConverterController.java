@@ -42,7 +42,8 @@ public class ConverterController {
         Converter trgConv = targetUnit.getValue();
         Conversion conversion = new Conversion(srcConv, trgConv);
         conversion.setSourceValue(srcVal);
-        targetValue.setText(conversion.getFormattedTargetValue());
+        //targetValue.setText(conversion.getFormattedTargetValue());
+        targetValue.setText(String.valueOf(conversion.convert(srcVal)));
     }
 
     public void swap(ActionEvent actionEvent) {
