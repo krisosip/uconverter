@@ -51,7 +51,6 @@
                GridPane.rowIndex="1"
                GridPane.hgrow="NEVER"/>
         <TextField fx:id="targetValue"
-                  editable="false"
                   GridPane.columnIndex="3"
                   GridPane.rowIndex="1"
                   GridPane.hgrow="ALWAYS"/>

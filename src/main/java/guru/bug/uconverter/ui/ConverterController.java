@@ -37,13 +37,25 @@ public class ConverterController {
     }
 
     public void convert(ActionEvent actionEvent) {
-        double srcVal = Double.parseDouble(sourceValue.getText());
         Converter srcConv = sourceUnit.getValue();
         Converter trgConv = targetUnit.getValue();
-        Conversion conversion = new Conversion(srcConv, trgConv);
-        conversion.setSourceValue(srcVal);
-        //targetValue.setText(conversion.getFormattedTargetValue());
-        targetValue.setText(String.valueOf(conversion.convert(srcVal)));
+
+        String input = sourceValue.getText();
+        if (input.equals("")){
+            input = targetValue.getText();
+        }
+        double inputDouble = Double.parseDouble(input);
+
+        String check = sourceValue.getText();
+        if (check.equals("")) {
+            Conversion conversion = new Conversion(trgConv, srcConv);
+            conversion.setSourceValue(inputDouble);
+            sourceValue.setText(String.valueOf(conversion.convert(inputDouble)));
+        } else {
+            Conversion conversion = new Conversion(srcConv, trgConv);
+            conversion.setSourceValue(inputDouble);
+            targetValue.setText(String.valueOf(conversion.convert(inputDouble)));
+        }
     }
 
     public void swap(ActionEvent actionEvent) {
